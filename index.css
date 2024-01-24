@@ -1,28 +1,97 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Generate a <br><span>Radom Password</span></h1>
-        <p>Never use an insecure password again</p>
-        <form>
-            <label> Password Length:
-                <input type="number" placeholder="15" id="length-in"><br>
-                <small id="length-err"></small>
-            </label>
-        </form>
-        <button id="btn-el">Generate password</button>
-        <script src="index.js"></script>
-        <hr>
-        <div class="password-wrapper">
-            <div class="password" id="first-pass"></div>
-            <div class="password" id="second-pass"></div>
-        </div>
-    </body>
-</html>
+*{
+    margin:0;
+    padding: 0;
+    color:white;
+    font-family: montserrat, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color:#1f2937;
+}
+
+h1{
+    margin:0;
+    padding:10px 10px 3px 10px;
+}
+
+span{
+    color:#fb7185;
+}
+
+p{
+    font-size: 10px;
+    padding: 0 10px 10px 10px
+}
+
+button{
+    margin: 6px 10px 30px 10px;
+    background: #e11d48;
+    border:none;
+    border-radius:4px;
+    padding:6px 15px;
+    font-size:15px;
+    font-weight: 700
+}
+
+button:active{
+    box-shadow:none;
+    outline:none;
+}
+
+button:focus{
+    box-shadow:none;
+    outline:none;
+}
+
+hr{
+    width:90%;
+    margin:0 auto;
+    border: 1px solid #273549
+}
+
+.password-wrapper{
+    display:flex;
+    flex-direction:column;
+    /* border: 1px solid green; */
+    margin:10px;
+}
+
+.password{
+    display:flex;
+    justify-content: center;
+    background: #273549;
+    padding:20px;
+    margin:10px 0;
+    border-radius:4px;
+    font-family: Source Code Pro, sans-serif;
+    font-size:13px;
+    color:#fb7185;
+}
+
+form{
+    margin:10px 10px 0px 10px;
+}
+
+label{
+    font-size: 14px;
+    margin-right:5px;
+}
+
+input{
+    background: #273549;
+    border:none;
+    padding:8px;
+    border-radius: 3px;
+    margin-top:5px;
+    margin-bottom:0;
+}
+
+input:focus{
+    outline:none;
+}
+
+small{
+    margin:0;
+    padding:0;
+}
