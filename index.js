@@ -1,34 +1,47 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Generate a <br><span>Radom Password</span></h1>
-        <p>Never use an insecure password again</p>
-        <form>
-            <label> Password Length:</label>
-            <div class="input-wrapper">
-                <input type="number" placeholder="15" id="length-in"><br>
-                <small id="length-err"></small>
-            </div>
-        </form>
-        <button id="btn-el">Generate password</button>
-        <hr>
-        <div class="password-container">
-            <div class="password-wrapper" id="first-pass">
-            </div>
-            <div class="password-wrapper" id="second-pass">
-            </div>
-        </div>
-        
-        
-        <script src="index.js"></script>
-        <script src="https://kit.fontawesome.com/4f7b8c1103.js" crossorigin="anonymous"></script>
-    </body>
-</html>
+const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?",
+    "/"];
+
+
+const btnEl = document.getElementById("btn-el")
+const firstPassEl = document.getElementById("first-pass")
+const secondPassEl = document.getElementById("second-pass")
+const copyFirstEl = document.getElementById("copy-first-el")
+const copySecondEl = document.getElementById("copy-second-el")
+
+btnEl.addEventListener("click", function () {
+    const lengthIn = goodLength();
+    
+    let passArr = []
+
+    for (let i = 0; i < 2; i++) {
+        let password = "";
+        for (let x = 0; x < lengthIn; x++) {
+            password += characters[Math.floor(Math.random() * characters.length)]
+        }
+        passArr.push(password)
+    }
+
+    firstPassEl.innerText = passArr[0]
+    secondPassEl.innerText = passArr[1]
+})
+
+function goodLength() {
+    const lengthErr = document.getElementById("length-err")
+    const lengthIn = Number(document.getElementById("length-in").value)
+
+    if (lengthIn <= 20) {
+        lengthErr.innerText = ""
+        return Number(document.getElementById("length-in").value);
+
+    } else if (lengthIn > 20) lengthErr.innerText = "Max Password length is 20"
+
+}
+
+function copyFirst(){
+    navigator.clipboard.writeText(firstPassEl.innerText)
+    alert("Copied first")
+}
+function copySecond(){
+    navigator.clipboard.writeText(secondPassEl.innerText)
+    alert("Copied Second")
+}
