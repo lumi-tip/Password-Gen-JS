@@ -11,8 +11,9 @@ body {
 }
 
 h1{
+    font-size: 100px;
     margin:0;
-    padding:10px 10px 3px 10px;
+    padding:30px 30px 3px 30px;
 }
 
 span{
@@ -20,17 +21,55 @@ span{
 }
 
 p{
-    font-size: 10px;
-    padding: 0 10px 10px 10px
+    font-size: 40px;
+    padding: 0 30px 30px 30px
+}
+
+form{
+    display: flex;
+    align-items: center;
+    margin:30px 30px 0px 30px;
+    flex-wrap:wrap;
+}
+
+label{
+    font-size: 45px;
+    margin-right:10px;
+}
+
+.input-wrapper{
+    display:inline;
+}
+
+input{
+    display: inline;
+    background: #273549;
+    font-size:30px;
+    border:none;
+    padding:8px;
+    border-radius: 3px;
+    margin-top:5px;
+    margin-bottom:0;
+    width:300px;
+}
+
+input:focus{
+    outline:none;
+}
+
+small{
+    font-size: 20px;
+    margin:0;
+    padding:0;
 }
 
 button{
-    margin: 6px 10px 30px 10px;
+    margin: 30px 30px 30px 30px;
     background: #e11d48;
     border:none;
     border-radius:4px;
-    padding:6px 15px;
-    font-size:15px;
+    padding:20px 35px;
+    font-size:30px;
     font-weight: 700
 }
 
@@ -50,48 +89,52 @@ hr{
     border: 1px solid #273549
 }
 
-.password-wrapper{
+.password-container{
     display:flex;
     flex-direction:column;
-    /* border: 1px solid green; */
-    margin:10px;
+    margin:30px;
+}
+
+.password-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #273549;
+    min-height:50px;
+    margin:10px 0;
+    padding:10px 10px;
+    border-radius:4px;
+    text-align: center;
 }
 
 .password{
-    display:flex;
-    justify-content: center;
-    background: #273549;
-    padding:20px;
-    margin:10px 0;
-    border-radius:4px;
     font-family: Source Code Pro, sans-serif;
+    font-size:30px;
+    color:#fb7185;
+    padding:0;
+    margin:0;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.inner-text{
+    padding:0;
+    margin:0;
     font-size:13px;
     color:#fb7185;
 }
 
-form{
-    margin:10px 10px 0px 10px;
+.copy-el{
+    background:inherit;
+    margin:0;
+    align-self:right;
 }
 
-label{
-    font-size: 14px;
-    margin-right:5px;
-}
-
-input{
-    background: #273549;
-    border:none;
-    padding:8px;
-    border-radius: 3px;
-    margin-top:5px;
-    margin-bottom:0;
-}
-
-input:focus{
-    outline:none;
-}
-
-small{
+.copy-el i{
+    font-size: 30px;
+    color:#fb7185;
     margin:0;
     padding:0;
 }
+
+
