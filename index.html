@@ -12,11 +12,19 @@
         <h1>Generate a <br><span>Radom Password</span></h1>
         <p>Never use an insecure password again</p>
         <form>
-            <label> Password Length:</label>
-            <div class="input-wrapper">
-                <input type="number" placeholder="15" id="length-in"><br>
-                <small id="length-err"></small>
+            <div class="length-container">
+                <label> Password Length:</label>
+                <div class="input-wrapper">
+                    <input type="number" placeholder="15" id="length-in"><br>
+                    <small id="length-err"></small>
+                </div>
             </div>
+            <!-- <div class="checkbox-container">
+                <label>Characters</label>
+                <div class="checkbox-wrapper"><span class="checkbox-tittle">Letters</span><input class="checkboxes" type="checkbox" checked class="checkbox-el"></div>
+                <div class="checkbox-wrapper"><span class="checkbox-tittle">Numbers</span><input class="checkboxes" type="checkbox" checked class="checkbox-el"></div>
+                <div class="checkbox-wrapper"><span class="checkbox-tittle">Symbols</span><input class="checkboxes" type="checkbox" checked class="checkbox-el"></div>
+            </div> -->
         </form>
         <button id="btn-el">Generate password</button>
         <hr>
